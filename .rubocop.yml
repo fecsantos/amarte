@@ -1,0 +1,121 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-sorbet
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.6
+  Exclude:
+    - "bin/**/*"
+    - "config/**/*"
+    - "db/schema.rb"
+    - "engines/**/db/schema.rb"
+    - "db/seeds.rb"
+    - "engines/**/db/seeds.rb"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+  IgnoredPatterns: ['\A#']
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Lint/ConstantDefinitionInBlock:
+  AllowedMethods:
+    - enums
+Metrics/AbcSize:
+  Enabled: false
+  Exclude:
+    - "app/admin/**/*"
+    - "engines/**/admin/**/*"
+    - "db/**/*"
+    - "engines/**/db/**/*"
+Metrics/BlockLength:
+  Exclude:
+    - "app/admin/**/*"
+    - "engines/**/admin/**/*"
+    - "db/**/*"
+    - "engines/**/db/**/*"
+    - "spec/**/*"
+    - "engines/**/spec/**/*"
+Metrics/ClassLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/**/*"
+    - "engines/**/db/**/*"
+    - "spec/**/*"
+Metrics/ParameterLists:
+  Max: 10
+Metrics/ModuleLength:
+  Exclude:
+    - "app/admin/**/*"
+    - "engines/**/admin/**/*"
+Naming/InclusiveLanguage:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+Rails/NotNullColumn:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+RSpec/MessageChain:
+  Enabled: true
+  Exclude:
+    - "spec/**/*"
+    - "engines/**/spec/**/*"
+RSpec/AnyInstance:
+  Enabled: true
+  Exclude:
+    - "spec/features/**/*"
+    - "engines/**/spec/features/**/*"
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: true
+  Exclude:
+    - "spec/features/**/*"
+    - "spec/integration/**/*"
+    - "engines/**/spec/features/**/*"
+    - "engines/**/spec/integration/**/*"
+RSpec/MultipleMemoizedHelpers:
+  Max: 50
+RSpec/NestedGroups:
+  Enabled: false
+Sorbet/FalseSigil:
+  Enabled: false
+Style/AccessorGrouping:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Gemspec/RequireMFA:
+  Enabled: false
